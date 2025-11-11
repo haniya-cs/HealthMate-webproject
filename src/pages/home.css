@@ -1,0 +1,208 @@
+/* General page layout */
+.home-page {
+     width: 100%;
+  max-width: 1200px;
+  background: #ffffffd8;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* Hero section container */
+.hero-section {
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 50px 40px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-left: 12%;
+}
+
+.hero-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon container */
+.hero-icon-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.main-icon {
+  font-size: 80px;
+  color: #5cbdf2;
+}
+
+.small-icon {
+  position: absolute;
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.apple {
+  top: -10px;
+  left: -25px;
+}
+
+.muscle {
+  bottom: -10px;
+  right: -25px;
+}
+
+.chart {
+  top: 5px;
+  right: -35px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Titles */
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #25eb56;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #5cbdf2;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4aa9de;
+  transform: translateY(-3px);
+}
+
+.btn-bmi {
+  background-color: #5cbdf2;
+}
+
+.btn-diet {
+  background-color: #7ac37a;
+}
+
+.btn-nutrition {
+  background-color: #f9a826;
+}
+
+.btn-bmi:hover {
+  background-color: #46b3f0;
+}
+
+.btn-diet:hover {
+  background-color: #66b366;
+}
+
+.btn-nutrition:hover {
+  background-color: #e69500;
+}
+p{
+  color: black;
+}
+/* ----- Stats Section ----- */
+.stats {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 50px 30px;
+  margin: 60px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.stats h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+/* Individual Stat Cards */
+.stat {
+  background: #f9fafb;
+  border-radius: 15px;
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat:hover {
+  background: #eef4ff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Numbers and Labels */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* Color Themes */
+.stat-number{
+   color: #25eb56;
+}
+
+.stat-label {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats {
+    padding: 30px 20px;
+  }
+
+  .stats h2 {
+    font-size: 1.6rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}

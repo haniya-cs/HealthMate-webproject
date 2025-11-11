@@ -1,0 +1,257 @@
+body {
+   background: linear-gradient(135deg, #e3f2fd, #e8f5e9, #f3e5f5);
+  font-family: "Poppins", sans-serif;
+  background-image: url('../assets/pexels-ella-olsson-572949-1640773.jpg');
+  background-size: cover;          /* sale to fill */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;    /* keeps it still while scrolling */
+  min-height: 100%;                /* ensure it covers everything */
+  margin: 0;
+}
+
+
+.bmi-page {
+  padding: 60px 0;
+}
+
+.bmi-container {
+  width: 50%;
+  max-width: 1200px;
+  background: #ffffffd8;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  margin: 0 auto;
+  
+}
+
+
+.bmi-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bmi-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #25eb56;
+}
+
+.bmi-header p {
+  color: black;
+  font-size: 1rem;
+}
+
+
+.bmi-form-section {
+  background: #f9fafb;
+  border-radius: 15px;
+  padding: 30px 35px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+.bmi-form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.bmi-form-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+
+.bmi-form label {
+  font-weight: bold;
+  color: black;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bmi-form input {
+  width: 100%;
+  max-width: 280px; 
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  margin: 10px;
+}
+
+.bmi-form .input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+input:focus,
+select:focus {
+  border-color: #25eb56;
+  outline: none;
+  box-shadow: 0 0 4px rgba(92, 189, 242, 0.4);
+}
+
+/* ----- Gender Section ----- */
+.bmi-gender-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 5px;
+  
+}
+
+.bmi-radio {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 15px 0;
+  
+}
+
+.bmi-radio input[type="radio"] {
+  width: auto;
+  height: auto;
+  accent-color: #25eb56;
+}
+
+
+.bmi-btn {
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.bmi-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #059669);
+  transform: translateY(-2px);
+}
+
+/* ----- Results Section ----- */
+.bmi-result-section {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 35px;
+  margin-top: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bmi-result-title {
+  font-weight: 700;
+  color:#25eb56 ; 
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bmi-result-value {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0ee950;
+  text-align: center;
+}
+
+.bmi-result-category {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.bmi-recommendation {
+  background: #f0f9ff;
+  border-left: 4px solid #25eb56;
+  padding: 12px;
+  border-radius: 8px;
+  color: #374151;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ----- Tips Section ----- */
+.bmi-tips {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.bmi-tips h3 {
+  font-weight: 700;
+  color: #25eb56;
+  margin-bottom: 25px;
+}
+
+.bmi-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.bmi-tip {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.bmi-tip:hover {
+  background: #e0f2fe;
+  transform: translateY(-3px);
+}
+
+.bmi-tip span {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bmi-tip h6 {
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.bmi-tip p {
+  color: black;
+  font-size: 0.9rem;
+}
+
+/* ----- Animation ----- */
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Responsive Fixes ----- */
+@media (max-width: 768px) {
+  .bmi-container {
+    padding: 30px 20px;
+  }
+
+  .bmi-form input {
+    max-width: 100%;
+  }
+
+  .bmi-form-section {
+    padding: 25px;
+  }
+}

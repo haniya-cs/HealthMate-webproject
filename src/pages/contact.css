@@ -1,0 +1,42 @@
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+ margin-bottom: 25px;
+
+
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #25eb56;
+  outline: none;
+  box-shadow: 0 0 4px rgba(92, 189, 242, 0.4);
+}
+
+textarea {
+  resize: none;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  
+}
+/* Label styling */
+label {
+  display: block;
+  font-weight: 500;
+  color: black;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 6px;   
+}
+#lastname {
+margin-top: 3px;
+}

@@ -1,0 +1,168 @@
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.852);
+  color: #25eb56;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+
+.footer-svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-description {
+  color: black;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+/* === Section Titles === */
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #25eb56;
+}
+
+/* === Lists === */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  color: black;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* === Contact Section === */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: black;
+}
+
+.contact-icon.email {
+  background-color: #2563eb;
+}
+
+.contact-icon.phone {
+  background-color: #16a34a;
+}
+
+.contact-label {
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.contact-value {
+  color: black ;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* === Bottom Bar === */
+.footer-bottom {
+  border-top: 1px solid black;
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.footer-copy {
+  color: #25eb56;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-policies {
+  display: flex;
+  gap: 20px;
+  color: #25eb56;
+   
+}
+
+.footer-policies a {
+  color: #25eb56;
+  text-decoration: none;
+  font-size: 15x;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.footer-policies a:hover {
+  color: black;
+}
+
+/* === Responsive === */
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.footer {
+  position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: #25eb56;
+  z-index: 1000;
+  height: 30%;
+}
