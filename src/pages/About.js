@@ -1,5 +1,6 @@
 import React from "react";
-import'../pages/about.css';
+import'../styles/about.css';
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <main className="max-w-4xl mx-auto px-4 py-6 lg:py-12">
@@ -8,7 +9,6 @@ const About = () => {
           About HealthMate
         </h1>
 
-        {/* Mission Section */}
         <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8 mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Our Mission
@@ -24,7 +24,6 @@ const About = () => {
                 lasting healthy habits and achieve your goals safely, effectively, and confidently.
           </p>
 
-          {/* What We Offer */}
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             What We Offer
           </h2>
@@ -60,7 +59,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-xl p-6 lg:p-8 text-center shadow-md">
           <h2 className="text-2xl font-bold mb-4">
             Ready to Start Your Journey?
@@ -70,7 +68,7 @@ const About = () => {
             HealthMate.
           </p>
           <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Get Started Today
+            <Link to="/login">Get Started Today</Link>
           </button>
         </div>
       </div>
