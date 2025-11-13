@@ -152,6 +152,7 @@
 @media (max-width: 768px) {
   .footer-bottom {
     flex-direction: row;
+    justify-content: space-between;
     text-align: left;
   }
 }
@@ -164,11 +165,4 @@
   color: #25eb56;
   z-index: 1000;
   height: 30%;
-}
-
-.footer-description{
-  padding-top: 10px;
-}
-.footer-brand{
-  padding-bottom: 100px;
 }
