@@ -106,6 +106,7 @@ const Dietplan = () => {
         let tdee = bmr * activityMultipliers[dietActivity];
 
         // Adjust calories based on goal
+        let proteinRatio = 0.25, carbRatio = 0.45, fatRatio = 0.30;
         let targetCalories;
         if (dietGoal === 'weight-loss') targetCalories = Math.round(tdee - 500);
         else if (dietGoal === 'weight-gain') targetCalories = Math.round(tdee + 500);
@@ -128,7 +129,7 @@ const Dietplan = () => {
 
 
         // Macro Ratios
-        let proteinRatio = 0.25, carbRatio = 0.45, fatRatio = 0.30;
+        
         if (dietGoal === 'weight-loss') [proteinRatio, carbRatio, fatRatio] = [0.35, 0.35, 0.30];
         else if (dietGoal === 'muscle-gain') [proteinRatio, carbRatio, fatRatio] = [0.30, 0.45, 0.25];
         else if (dietGoal === 'weight-gain') [proteinRatio, carbRatio, fatRatio] = [0.25, 0.50, 0.25];

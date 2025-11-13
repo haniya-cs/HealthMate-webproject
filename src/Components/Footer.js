@@ -67,9 +67,9 @@ const navigate=useNavigate();
             Empowering healthier lives worldwide.
           </p>
           <div className="footer-policies">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
+            <a href="https://google.com">Privacy Policy</a>
+            <a href="https://google.com">Terms of Service</a>
+            <a href="https://google.com">Cookie Policy</a>
           </div>
         </div>
       </div>
