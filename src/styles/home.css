@@ -198,12 +198,9 @@ button{
     align-items: center;
   }
   .hero-section {
-    max-width: 60%;
-    padding: 20px 10px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
+    border-radius: 12px;
   }
-
   .features{
     flex-direction: column;
     gap: 20px;
@@ -215,7 +212,7 @@ button{
   .hero-subtitle {
     font-size: 1rem;
     line-height: 1.4;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .hero-buttons {
@@ -243,7 +240,7 @@ button{
 
   
   .stats {
-    padding: 30px 15px;
+    padding: 20px 10px;
     max-width: 95%;
   }
 
