@@ -109,6 +109,7 @@
     display: none; /* hidden by default */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: relative;
+    margin-top: 10px;
   }
 
   .rightSide.active {
@@ -130,6 +131,12 @@
 
   .rightSide, .rightSide a, .login-btn {
     width: 100%;
+  }
+
+  .navbar {
+    padding: 10px 20px;
+    flex-direction: column; /* allow stacking */
+    align-items: flex-start;
   }
 }
 
