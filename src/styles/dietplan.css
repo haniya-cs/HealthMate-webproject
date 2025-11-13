@@ -1,4 +1,4 @@
-/* Main container */
+
 main.max-w-6xl {
      width: 100%;
   max-width: 1200px;
@@ -9,9 +9,9 @@ main.max-w-6xl {
   margin: 0 auto;
   margin-bottom: 40px;
   margin-top: 40px;
+   animation: fadeIn 0.8s ease-in-out
 }
 
-/* Page title */
 main h1.text-3xl {
     text-align: center;
     font-size: 2.5rem;
@@ -28,14 +28,14 @@ main h1.text-3xl {
     padding: 2rem;
 }
 
-/* Form labels */
+
 label {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-/* Form inputs & selects */
+
 input[type="number"],
 input[type="text"],
 select {
@@ -56,7 +56,6 @@ select:focus {
   box-shadow: 0 0 4px rgba(92, 189, 242, 0.4);
 }
 
-/* Submit button */
 button[type="submit"] {
     width: 100%;
     padding: 0.75rem;
@@ -73,7 +72,6 @@ button[type="submit"]:hover {
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
 }
 
-/* Macros summary cards */
 .bg-blue-100,
 .bg-green-100,
 .bg-yellow-100,
@@ -158,7 +156,7 @@ h5.font-bold.mb-1 {
     color: black;
 }
 
-/* Responsive adjustments */
+
 @media (min-width: 1024px) {
     .grid.lg\:grid-cols-2 {
         display: flex;

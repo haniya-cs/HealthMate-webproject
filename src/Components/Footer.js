@@ -1,5 +1,5 @@
+import "../styles/Footer.css"; 
 
-import "../pages/Footer.css"; 
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -8,19 +8,16 @@ const navigate=useNavigate();
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-        
+
           <div className="footer-section">
-            <div className="footer-logo">
-              
               <span className="footer-brand">HealthMate</span>
-            </div>
             <p className="footer-description">
              "Your trusted partner in achieving a balanced,
               healthy lifestyle — one step at a time."
             </p>
           </div>
 
-          {/* Quick Links */}
+          
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-list">
@@ -43,9 +40,6 @@ const navigate=useNavigate();
             </ul>
           </div>
 
-          
-
-          {/* Contact Info */}
           <div className="footer-section">
             <h3 className="footer-title">Get in Touch</h3>
             <div className="footer-contact">
@@ -67,7 +61,6 @@ const navigate=useNavigate();
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="footer-bottom">
           <p className="footer-copy">
             © {new Date().getFullYear()} HealthMate. All rights reserved. |

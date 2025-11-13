@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Navbar from "./Components/Navbar";
 import BMI from "./pages/BMI";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
@@ -9,7 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./Components/Footer";
 import Home from './pages/Home.js';
-import Login from "./Components/Login.js";
+import Login from './Components/Login.js';
 
 const App = () => {
 
@@ -27,7 +26,7 @@ const App = () => {
     <Route path ="/nutrition" element={<Nutrition/>}/>
     <Route path ="/about" element={<About/>}/>
     <Route path ="/contact" element={<Contact/>}/>
-    <Route path="/login" element={<Login/>}/>
+    <Route path ="/login" element={<Login/>}/>
    </Routes>
 
    <Footer/>

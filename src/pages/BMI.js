@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "./bmi.css";
-
+import "../styles/bmi.css";
 
 const BMI = () => {
   const [formData, setFormData] = useState({
@@ -48,14 +47,12 @@ const BMI = () => {
   return (
     <div className="bmi-page">
       <div className="bmi-container">
-        {/* Header */}
         <div className="bmi-header">
           <h1>BMI Calculator</h1>
           <p>Find out your Body Mass Index and what it means for your health.</p>
         </div>
 
         <div className="row g-5">
-          {/* Form */}
           <div className="col-lg-6">
             <div className="bmi-form-section">
               <h3 className="mb-4 text-primary fw-semibold">Enter Your Details</h3>
@@ -96,7 +93,7 @@ const BMI = () => {
                   />
                 </div>
 
-                {/* Gender Selection */}
+                
                 <div className="bmi-form-group">
                   <label>Gender</label>
                   <div className="bmi-gender-group">
@@ -132,7 +129,7 @@ const BMI = () => {
             </div>
           </div>
 
-          {/* Result */}
+          
           <div className="col-lg-6">
             {result && (
               <div className="bmi-result-section fade-in">
@@ -145,7 +142,7 @@ const BMI = () => {
           </div>
         </div>
 
-        {/* Tips Section */}
+        
         <div className="bmi-tips">
           <h3>Healthy Lifestyle Tips</h3>
           <div className="bmi-tips-grid">

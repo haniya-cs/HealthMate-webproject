@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import'../pages/dietplan.css';
+import'../styles/dietplan.css';
 const Dietplan = () => {
     
 
@@ -112,14 +112,13 @@ const Dietplan = () => {
         else if (dietGoal === 'muscle-gain') targetCalories = Math.round(tdee + 300);
         else targetCalories = Math.round(tdee);
 
-        // 🩺 Adjust based on health condition
         if (formData.diseases === "diabetes") {
-  // Lower carb ratio, increase protein slightly
+  
         carbRatio = Math.max(0.30, carbRatio - 0.15);
         proteinRatio = proteinRatio + 0.05;
         }
         if (formData.diseases === "hypertension" || formData.diseases === "heart") {
-        // Encourage less fat
+        
          fatRatio = Math.max(0.20, fatRatio - 0.05);
        }
       if (formData.diseases === "kidney") {
@@ -193,12 +192,12 @@ const Dietplan = () => {
                         <div className="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label>Age</label>
-                                <input type="number" name="dietAge" value={formData.dietAge} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
+                                <input type="number" placeholder='your age' name="dietAge" value={formData.dietAge} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
                             </div>
                             <div>
                                 <label>Gender</label>
                                 <select name="dietGender" value={formData.dietGender} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required>
-                                    <option value="">Select Gender</option>
+                                    
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
@@ -208,11 +207,11 @@ const Dietplan = () => {
                         <div className="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label>Height (cm)</label>
-                                <input type="number" name="dietHeight" value={formData.dietHeight} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
+                                <input type="number" placeholder='your height' name="dietHeight" value={formData.dietHeight} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
                             </div>
                             <div>
                                 <label>Weight (kg)</label>
-                                <input type="number" name="dietWeight" value={formData.dietWeight} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
+                                <input type="number"placeholder='your weight' name="dietWeight" value={formData.dietWeight} onChange={handleInputChange} className="w-full border px-3 py-2 rounded-lg" required />
                             </div>
                         </div>
                    <div>
@@ -283,7 +282,7 @@ const Dietplan = () => {
                     </form>
                 </div>
 
-                {/* Plan Display */}
+                
                 <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8 max-h-[80vh] overflow-y-auto">
                     {!planData ? (
                         <p className="text-gray-500 text-center mt-12">Fill the form to see your 7-day meal plan.</p>

@@ -1,4 +1,3 @@
-/* ----- Background (same as BMI page) ----- */
 body {
   background: linear-gradient(135deg, #e3f2fd, #e8f5e9, #f3e5f5);
   font-family: "Poppins", sans-serif;
@@ -11,13 +10,12 @@ body {
   margin: 0;
 }
 
-/* ----- Main Layout ----- */
+
 main {
   padding: 40px 0; 
- /* reduced from 60px */
+ 
 }
 
-/* ----- Fade Animation (same as BMI) ----- */
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -33,24 +31,25 @@ main {
   }
 }
 
-/* ----- About Page Container ----- */
+
 .max-w-4xl {
   background: #ffffffd8;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px 40px; /* tighter padding */
+  padding: 30px 40px;
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 120px;
   margin-right: 120px;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* ----- Titles ----- */
+
 h1 {
   color: #25eb56;
   font-weight: 700;
-  margin-bottom: 25px; /* reduced */
+  margin-bottom: 25px; 
 }
 
 h2 {
@@ -65,23 +64,23 @@ h3 {
   margin-bottom: 8px;
 }
 
-/* ----- Text ----- */
+
 p {
   color: #555;
   line-height: 1.5;
   margin-bottom: 12px;
 }
 
-/* ----- White Content Box (Mission / Offer) ----- */
+
 .bg-white {
   background: #ffffffd8;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 25px 30px; /* reduced */
-  margin-bottom: 25px; /* less vertical gap */
+  padding: 25px 30px; 
+  margin-bottom: 25px; 
 }
 
-/* ----- Gradient CTA Section ----- */
+
 .bg-gradient-to-r {
   background: linear-gradient(135deg, #25eb56,  #25eb56);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -89,10 +88,15 @@ p {
   border-radius: 16px;
 }
 
-/* ----- Button ----- */
+button a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+ color: black;
+}
+
 button {
-  background: linear-gradient(135deg,  #25eb56, #059669);
-  color: black;
+  background: linear-gradient(135deg,  #25eb56, #0dfd4d);
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
@@ -100,17 +104,19 @@ button {
   font-weight: 600;
   transition: 0.3s;
   cursor: pointer;
+  color: black;
 }
 
 button:hover {
-  background: linear-gradient(135deg,  #25eb56, #059669);
+  background: linear-gradient(135deg,  #25eb56, #0dfd4d);
   transform: translateY(-2px);
+  
 }
 
-/* ----- Grid for "What We Offer" ----- */
+
 .grid {
   display: grid;
-  gap: 15px; /* reduced gap between cards */
+  gap: 15px; 
 }
 
 @media (max-width: 768px) {

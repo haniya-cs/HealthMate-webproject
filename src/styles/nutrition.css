@@ -1,4 +1,3 @@
-/* === Global Page Styling === */
 .nutrition-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #e6f3ff, #fef6ff);
@@ -8,15 +7,15 @@
   padding: 40px 20px;
   font-family: "Poppins", sans-serif;
   background-image: url('../assets/pexels-ella-olsson-572949-1640773.jpg');
-  background-size: cover;          /* scale to fill */
+  background-size: cover;          
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;    /* keeps it still while scrolling */
-  min-height: 100%;                /* ensure it covers everything */
+  background-attachment: fixed;    
+  min-height: 100%;                
   margin: 0;
 }
 
-/* === Container === */
+
 .nutrition-container {
   width: 100%;
   max-width: 1200px;
@@ -24,6 +23,7 @@
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 40px;
+   animation: fadeIn 0.8s ease-in-out
 }
 
 .nutrition-container h1 {
@@ -34,7 +34,7 @@
   margin-bottom: 25px;
 }
 
-/* === Layout === */
+
 .nutrition-content {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +47,7 @@
   min-width: 340px;
 }
 
-/* === Card Design === */
+
 .nutrition-card {
   background: #fff;
   border-radius: 16px;
@@ -63,7 +63,7 @@
   margin-bottom: 20px;
 }
 
-/* === Forms === */
+
 .nutrition-form {
   display: flex;
   flex-direction: column;
@@ -94,7 +94,7 @@
 }
 
 .bmi-btn {
-  background: linear-gradient(90deg, #25eb56, #25eb56);
+  background: linear-gradient(90deg,  #0dfd4d, #10f21f);
   color: white;
   border: none;
   border-radius: 8px;
@@ -110,7 +110,7 @@
   transform: scale(1.02);
 }
 
-/* === Progress Section === */
+
 .progress-section {
   margin: 20px 0;
 }
@@ -148,7 +148,7 @@
   background: #f44336;
 }
 
-/* === Food List === */
+
 .food-list {
   margin-top: 20px;
 }
@@ -185,7 +185,7 @@
   transform: scale(1.2);
 }
 
-/* === Healthy Recipes === */
+
 .recipe-entry {
   background: #f8fbff;
   border: 1px solid #e1ecfa;
@@ -219,7 +219,7 @@
   color: #222;
 }
 
-/* === Responsive === */
+
 @media (max-width: 768px) {
   .nutrition-content {
     flex-direction: column;

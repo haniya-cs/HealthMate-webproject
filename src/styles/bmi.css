@@ -1,12 +1,12 @@
 body {
-   background: linear-gradient(135deg, #e3f2fd, #e8f5e9, #f3e5f5);
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9, #f3e5f5);
   font-family: "Poppins", sans-serif;
   background-image: url('../assets/pexels-ella-olsson-572949-1640773.jpg');
-  background-size: cover;          /* sale to fill */
+  background-size: cover;          
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;    /* keeps it still while scrolling */
-  min-height: 100%;                /* ensure it covers everything */
+  background-attachment: fixed;    
+  min-height: 100%;                
   margin: 0;
 }
 
@@ -23,7 +23,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 40px 50px;
   margin: 0 auto;
-  
+  animation: fadeIn 0.8s ease-in-out
 }
 
 
@@ -45,7 +45,7 @@ body {
 
 
 .bmi-form-section {
-  background: #f9fafb;
+  background: #fff;
   border-radius: 15px;
   padding: 30px 35px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
@@ -97,7 +97,7 @@ select:focus {
   box-shadow: 0 0 4px rgba(92, 189, 242, 0.4);
 }
 
-/* ----- Gender Section ----- */
+
 .bmi-gender-group {
   display: flex;
   justify-content: center;
@@ -138,9 +138,9 @@ select:focus {
   transform: translateY(-2px);
 }
 
-/* ----- Results Section ----- */
+
 .bmi-result-section {
-  background: #ffffff;
+  background: #fff;
   border-radius: 15px;
   padding: 30px 35px;
   margin-top: 40px;
@@ -169,7 +169,7 @@ select:focus {
 }
 
 .bmi-recommendation {
-  background: #f0f9ff;
+  background: #fff;
   border-left: 4px solid #25eb56;
   padding: 12px;
   border-radius: 8px;
@@ -178,7 +178,7 @@ select:focus {
   text-align: center;
 }
 
-/* ----- Tips Section ----- */
+
 .bmi-tips {
   margin-top: 60px;
   text-align: center;
@@ -197,7 +197,7 @@ select:focus {
 }
 
 .bmi-tip {
-  background: #f9fafb;
+  background: #fff;
   border-radius: 10px;
   padding: 20px;
   transition: 0.3s;
@@ -225,7 +225,7 @@ select:focus {
   font-size: 0.9rem;
 }
 
-/* ----- Animation ----- */
+
 .fade-in {
   animation: fadeIn 0.4s ease;
 }

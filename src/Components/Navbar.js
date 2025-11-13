@@ -1,5 +1,4 @@
-import React from 'react'
-import '../pages/Navbar.css'
+import '../styles/Navbar.css'
 import {Link} from 'react-router-dom';
 import logo from '../assets/make the uploaded lo.png'
 const NavBar = () => {
@@ -28,8 +27,8 @@ const NavBar = () => {
           <Link to="/nutrition"> Nutrition </Link>
             <Link to="/dietplan"> Dietplan </Link>
           <Link to="/contact"> Contact </Link>
-       <div className='log'><Link to='/login'>Login</Link></div> 
       </div>
+      <div className='login-btn'><Link to='/login'>Login</Link></div> 
     </div>
   )
 }

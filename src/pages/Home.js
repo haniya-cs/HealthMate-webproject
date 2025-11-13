@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import "./home.css";
+import "../styles/home.css";
 const Home = () => {
   const navigate=useNavigate();
   return (
     <main className="home-page">
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-         
           <h1 className="hero-title">Transform Your Health Journey</h1>
           <p className="hero-subtitle">
             Discover personalized nutrition plans, track your fitness goals,
@@ -28,7 +26,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="features">
         <div className="feature-card">
           <div className="feature-icon blue">
@@ -73,7 +70,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="stats">
         <h2>Join Thousands on Their Health Journey</h2>
         <div className="stats-grid">

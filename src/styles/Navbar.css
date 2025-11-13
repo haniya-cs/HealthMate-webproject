@@ -7,20 +7,6 @@
   padding-bottom: 40px;
 }
 
-.rightSide.log{
-  padding-left: 50%;
-}
-.navbar .leftSide {
-  flex: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 150px;
-}
-
-.navbar .leftSide img {
-  width: 70px;
-}
 
 .navbar .rightSide {
   flex: 50%;
@@ -47,6 +33,7 @@
   text-decoration: underline;
   color: black;
 }
+
 
 .navbar .rightSide svg {
   font-size: 40px;
@@ -76,16 +63,35 @@
   width: 70px;
   margin: 5px;
 }
+.login-btn{
+  display: flex;
+  align-items: center;
+}
+.login-btn a {
+  background-color: #25eb56;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.6s;
+  
+}
+
+.login-btn a:hover {
+  background-color: #1eb94a;
+}
 @media only screen and (max-width: 900px) {
   .navbar .rightSide a {
     width: 70px;
   }
-  .navbar .leftSide {
-    padding-left: 50px;
-  }
+  
 }
 
 @media only screen and (max-width: 600px) {
+  .login-btn{
+    margin-left: auto;
+  }
   .navbar .rightSide a {
     display: none;
   }
@@ -118,6 +124,8 @@
   height: 140px;
   width: auto;
 }
+
+
 
 
 

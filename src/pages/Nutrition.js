@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../pages/nutrition.css";
+import "../styles/nutrition.css";
 
 const Nutrition = () => {
   const [dailyGoal, setDailyGoal] = useState(2000);
@@ -23,7 +23,7 @@ const Nutrition = () => {
     portion: "",
   });
 
-  // ✅ Simple internal food calorie database (per serving)
+  //  local database for just testing
   const foodDatabase = {
     apple: 95,
     banana: 105,
@@ -231,7 +231,7 @@ const Nutrition = () => {
         <h1>Nutrition Tracker & Meal Recipes</h1>
 
         <div className="nutrition-content">
-          {/* LEFT SECTION */}
+          {/* left part */}
           <div className="nutrition-left">
             <div className="card nutrition-card">
               <h4 className="section-title">Daily Calorie Tracker</h4>
@@ -243,7 +243,7 @@ const Nutrition = () => {
                     <label>Age</label>
                     <input
                       type="number"
-                      placeholder="25"
+                      placeholder="your age"
                       value={setupData.userAge}
                       onChange={(e) =>
                         setSetupData({
@@ -263,6 +263,7 @@ const Nutrition = () => {
                         })
                       }
                     >
+                     
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
@@ -270,7 +271,7 @@ const Nutrition = () => {
                     <label>Height (cm)</label>
                     <input
                       type="number"
-                      placeholder="170"
+                      placeholder="your height"
                       value={setupData.userHeight}
                       onChange={(e) =>
                         setSetupData({
@@ -283,7 +284,7 @@ const Nutrition = () => {
                     <label>Weight (kg)</label>
                     <input
                       type="number"
-                      placeholder="70"
+                      placeholder="your weight"
                       value={setupData.userWeight}
                       onChange={(e) =>
                         setSetupData({
@@ -333,7 +334,6 @@ const Nutrition = () => {
                 </div>
               )}
 
-              {/* Progress Section */}
               {!showSetup && (
                 <>
                   <div className="progress-section">
@@ -366,7 +366,7 @@ const Nutrition = () => {
                     </div>
                   </div>
 
-                  {/* Add Food */}
+                 
                   <form onSubmit={addFood} className="nutrition-form">
                     <label>Food</label>
                     <input
@@ -394,7 +394,7 @@ const Nutrition = () => {
                     </button>
                   </form>
 
-                  {/* Food List */}
+                  
                   <div className="food-list">
                     <h5>Today's Meals</h5>
                     {foodEntries.length === 0 ? (
@@ -428,7 +428,7 @@ const Nutrition = () => {
             </div>
           </div>
 
-          {/* RIGHT SECTION - Recipes */}
+          
           <div className="nutrition-right">
             <div className="card nutrition-card">
               <h4 className="section-title">Healthy Recipes</h4>

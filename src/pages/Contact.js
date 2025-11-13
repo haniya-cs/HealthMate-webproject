@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import'../pages/contact.css'
+import'../styles/contact.css'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ const ContactPage = () => {
         </h1>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Contact Form */}
+          
           <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800">
               Send us a Message
@@ -170,7 +170,6 @@ const ContactPage = () => {
             )}
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
