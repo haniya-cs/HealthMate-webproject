@@ -241,17 +241,61 @@ select:focus {
   }
 }
 
-/* ----- Responsive Fixes ----- */
+
 @media (max-width: 768px) {
   .bmi-container {
     padding: 30px 20px;
+    width: 95%;      
+    margin: 20px auto;
   }
 
   .bmi-form input {
     max-width: 100%;
+    margin: 8px 0;
+    font-size: 0.95rem;
+  }
+
+   .bmi-form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bmi-form-group {
+    min-width: auto; 
+  }
+
+  .bmi-gender-group {
+    flex-direction: column; 
+    gap: 10px;
+  }
+  .bmi-radio {
+    justify-content: flex-start; 
+  }
+
+   .bmi-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .bmi-result-section {
+    padding: 25px;
+    margin-top: 30px;
+  }
+  .bmi-result-value {
+    font-size: 2rem;
+  }
+  .bmi-result-category, .bmi-recommendation {
+    font-size: 0.95rem;
+  }
+
+  .bmi-tips-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .bmi-form-section {
-    padding: 25px;
+    padding: 20px;
+    width: 100%;       
+    box-sizing: border-box; 
+    margin: 0 auto;
   }
 }

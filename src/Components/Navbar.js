@@ -9,16 +9,6 @@ const NavBar = () => {
           <img src={logo} alt="Logo" className="logo" />
         </Link>
       </div>
-
-        <div className="hiddenLinks">
-          <Link to="/"> Home </Link>
-          <Link to="/about"> About </Link>
-          <Link to="/bmi"> BMI </Link>
-          <Link to="/nutrition"> Nutrition </Link>
-            <Link to="/dietplan"> Dietplan </Link>
-          <Link to="/contact"> Contact </Link>
-          <Link to='/login'>Login</Link>
-        </div>
       
       <div className="rightSide">
       <Link to="/"> Home </Link>

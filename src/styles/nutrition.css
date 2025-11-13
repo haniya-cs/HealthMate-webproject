@@ -221,11 +221,60 @@
 
 
 @media (max-width: 768px) {
+  .nutrition-page {
+    padding: 20px 10px;
+    align-items: center;
+  }
   .nutrition-content {
     flex-direction: column;
+    gap: 20px;
   }
 
   .nutrition-container {
-    padding: 25px;
+    padding: 20px;
+    border-radius: 12px;
   }
+
+   .nutrition-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .nutrition-left,
+  .nutrition-right {
+    min-width: 100%;
+  }
+
+  .nutrition-form input,
+  .nutrition-form select {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .bmi-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .recipe-entry {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .progress-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .food-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .remove-btn {
+    align-self: flex-end;
+  }
+
+
 }

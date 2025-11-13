@@ -193,15 +193,77 @@ button{
 }
 
 @media (max-width: 768px) {
-  .stats {
+  .hero-section {
+    max-width: 90%;
     padding: 30px 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .stats h2 {
+  .hero-title {
     font-size: 1.6rem;
   }
 
-  .stat-number {
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn, .btn-bmi, .btn-diet, .btn-nutrition {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+
+  .hero-icon-container {
+    margin-bottom: 20px;
+  }
+
+  .main-icon {
+    font-size: 60px;
+  }
+
+  .small-icon {
+    font-size: 18px;
+  }
+
+  
+  .stats {
+    padding: 30px 15px;
+    max-width: 95%;
+  }
+
+  .stats h2 {
     font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .stat {
+    padding: 20px 15px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+
+  p {
+    font-size: 0.95rem;
   }
 }
+

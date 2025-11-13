@@ -40,3 +40,17 @@ label {
 #lastname {
 margin-top: 3px;
 }
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 18px; /* slightly smaller */
+    font-size: 0.95rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+}
