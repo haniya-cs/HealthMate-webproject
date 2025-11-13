@@ -17,14 +17,6 @@ const NavBar = () => {
         </Link>
       </div>
       
-      <div className="hamburger" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-
-
-
       <div className={`rightSide ${isOpen ? 'active' : ''}`}>
       <Link to="/"> Home </Link>
           <Link to="/about"> About </Link>
@@ -34,6 +26,15 @@ const NavBar = () => {
           <Link to="/contact"> Contact </Link>
       </div>
       <div className='login-btn'><Link to='/login'>Login</Link></div> 
+
+        <div className="hamburger" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+
+
+       
     </div>
   )
 }

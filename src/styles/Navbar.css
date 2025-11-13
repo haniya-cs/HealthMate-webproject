@@ -126,17 +126,14 @@
     margin-top: 10px;
   }
 
-  .navbar {
-    height: 70px; /* smaller navbar on mobile */
-  }
 
   .logo {
     height: 50px;
   }
 }
 
-/* Logo */
+
 .logo {
-  height: 140px; /* desktop size */
+  height: 140px; 
   width: auto;
 }
