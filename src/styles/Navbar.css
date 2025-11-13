@@ -102,9 +102,12 @@
     display: none;
   }
 
+ /*justify-content: flex-end;
+    padding-right: 50px;*/
   .navbar .rightSide {
-    justify-content: flex-end;
-    padding-right: 50px;
+     flex-direction: column;
+     align-items: center;
+     gap: 10px;
   }
 
   .navbar .rightSide button {
