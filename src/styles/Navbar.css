@@ -99,7 +99,7 @@
     justify-content: flex-end;
   }
   .navbar .rightSide a {
-    display: none;
+   display: block;
   }
 
  /*justify-content: flex-end;
