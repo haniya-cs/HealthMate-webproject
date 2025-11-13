@@ -10,7 +10,7 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   }
   return (
-    <div className="navbar">
+    <nav className="navbar">
        <div className="logo-container">
         <Link to="/">
           <img src={logo} alt="Logo" className="logo" />
@@ -24,8 +24,9 @@ const NavBar = () => {
           <Link to="/nutrition"> Nutrition </Link>
             <Link to="/dietplan"> Dietplan </Link>
           <Link to="/contact"> Contact </Link>
+          <div className='login-btn'><Link to='/login'>Login</Link></div> 
       </div>
-      <div className='login-btn'><Link to='/login'>Login</Link></div> 
+      
 
         <div className="hamburger" onClick={toggleMenu}>
         <div className="bar"></div>
@@ -35,7 +36,7 @@ const NavBar = () => {
 
 
        
-    </div>
+    </nav>
   )
 }
 
