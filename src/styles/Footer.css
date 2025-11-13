@@ -152,7 +152,6 @@
 @media (max-width: 768px) {
   .footer-bottom {
     flex-direction: row;
-    justify-content: space-between;
     text-align: left;
   }
 }

@@ -26,6 +26,7 @@ const navigate=useNavigate();
                 ["/about", "ℹ️", "About Us"],
                 ["/bmi", "📊", "BMI Calculator"],
                 ["/nutrition", "🍎", "Nutrition Tracker"],
+                ["/dietplan", "📅", "Diet Plan"],
                 ["/contact", "📞", "Contact"],
               ].map(([page, icon, label]) => (
                 <li key={page}>
