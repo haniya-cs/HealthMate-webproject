@@ -1,4 +1,4 @@
-/* Base Navbar */
+
 .navbar {
   width: 100%;
   background-color: white;
@@ -10,20 +10,18 @@
   box-sizing: border-box;
 }
 
-/* Logo */
+
 .logo {
-  height: 60px; /* adjust for mobile and desktop */
+  height: 60px; 
   width: auto;
 }
 
-/* Right side links */
+
 .navbar .rightSide {
-  display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Links styling */
 .navbar a {
   color: #25eb56;
   text-decoration: none;
@@ -37,7 +35,7 @@
   color: black;
 }
 
-/* Login button */
+
 .login-btn a {
   background-color: #25eb56;
   color: white;
@@ -52,9 +50,9 @@
   background-color: #1eb94a;
 }
 
-/* Hamburger menu */
+
 .hamburger {
-  display: none; /* hide on desktop */
+  display: none; 
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -67,7 +65,7 @@
   border-radius: 3px;
 }
 
-/* Mobile Styles */
+
 @media only screen and (max-width: 768px) {
   .navbar {
     flex-direction: row;
@@ -81,7 +79,7 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    z-index: 20; /* make sure it's above the menu */
+    z-index: 20; 
   }
 
   .hamburger .bar {
@@ -101,13 +99,13 @@
     align-items: center;
     gap: 10px;
     padding: 15px 0;
-    display: none; /* hidden by default */
+    display: none; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10;
   }
 
   .rightSide.active {
-    display: flex; /* show when hamburger clicked */
+    display: flex; /
   }
 
   .rightSide a, .login-btn {
@@ -117,7 +115,7 @@
   }
 
   .logo {
-    height: 60px; /* slightly bigger for mobile */
+    height: 70px; 
     width: auto;
   }
 }
