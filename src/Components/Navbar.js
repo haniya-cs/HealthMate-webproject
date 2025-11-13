@@ -1,7 +1,14 @@
 import '../styles/Navbar.css'
 import {Link} from 'react-router-dom';
 import logo from '../assets/make the uploaded lo.png'
+import { useState } from 'react';
 const NavBar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
   return (
     <div className="navbar">
        <div className="logo-container">
@@ -10,7 +17,15 @@ const NavBar = () => {
         </Link>
       </div>
       
-      <div className="rightSide">
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+
+
+
+      <div className={`rightSide ${isOpen ? 'active' : ''}`}>
       <Link to="/"> Home </Link>
           <Link to="/about"> About </Link>
           <Link to="/bmi"> BMI </Link>
