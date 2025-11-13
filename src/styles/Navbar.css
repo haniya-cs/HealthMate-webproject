@@ -1,86 +1,63 @@
+/* Base Navbar */
 .navbar {
   width: 100%;
-  height: 100px;
-  background-color:white;
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 40px;
- position:relative;
-}
-
-
-.navbar .rightSide {
- flex: 50%;
-  height: 100%;
+  background-color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  box-sizing: border-box;
 }
 
+/* Logo */
+.logo {
+  height: 60px; /* adjust for mobile and desktop */
+  width: auto;
+}
+
+/* Right side links */
+.navbar .rightSide {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Links styling */
 .navbar a {
   color: #25eb56;
   text-decoration: none;
-  margin: 20px;
   font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.3s;
 }
 
-.navbar .rightSide button {
-  background-color: transparent;
-  border: none;
-  color: #25eb56;
-  cursor: pointer;
-}
-.navbar .rightSide a:hover {
+.navbar a:hover {
   text-decoration: underline;
   color: black;
 }
 
-
-.navbar .rightSide svg {
-  font-size: 40px;
-}
-
-.navbar #open {
-  padding-left: 0px;
-}
-.navbar #open img {
-  display: none;
-}
-
-.navbar #close img {
-  display: inherit;
-}
-
-
-.navbar #open a {
-  width: 70px;
-  margin: 5px;
-}
-.login-btn{
-  display: flex;
-  align-items: center;
-}
+/* Login button */
 .login-btn a {
   background-color: #25eb56;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 6px;
-  transition: background-color 0.6s;
-  
+  transition: background-color 0.3s;
 }
 
 .login-btn a:hover {
   background-color: #1eb94a;
 }
 
-
+/* Hamburger menu */
 .hamburger {
   display: none; /* hide on desktop */
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger .bar {
@@ -90,8 +67,14 @@
   border-radius: 3px;
 }
 
-/* Mobile menu */
+/* Mobile Styles */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -108,40 +91,20 @@
     padding: 15px 0;
     display: none; /* hidden by default */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    position: relative;
-    margin-top: 10px;
+    z-index: 10;
   }
 
   .rightSide.active {
     display: flex; /* show when hamburger clicked */
   }
 
-  .login-btn {
-    margin-top: 10px;
-  }
-
-  .rightSide a {
-    display: block;
+  .rightSide a, .login-btn {
+    width: 90%;
     text-align: center;
     margin: 5px 0;
   }
+
   .logo {
-    height: 30px;
+    height: 40px;
   }
-
-  .rightSide, .rightSide a, .login-btn {
-    width: 100%;
-  }
-
-  .navbar {
-    padding: 10px 20px;
-    flex-direction: column; /* allow stacking */
-    align-items: flex-start;
-  }
-}
-
-
-.logo {
-  height: 140px; 
-  width: auto;
 }
