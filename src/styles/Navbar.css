@@ -72,28 +72,12 @@
 
 
 @media only screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-    align-items: center;
-  }
-
   .hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 20; 
+    z-index: 20;
   }
 
-  .hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #25eb56;
-    border-radius: 3px;
-  }
-
+ 
   .navbar .rightSide {
     position: absolute;
     top: 100%;
@@ -104,13 +88,14 @@
     align-items: center;
     gap: 10px;
     padding: 15px 0;
-    display: none; 
+    display: none;   
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10;
   }
 
+
   .rightSide.active {
-    display: flex; 
+    display: flex;
   }
 
   .rightSide a, .login-btn {
@@ -120,7 +105,6 @@
   }
 
   .logo {
-    height: 70px; 
-    width: auto;
+    height: 80px;
   }
 }
