@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   gap: 15px; 
-  flex:50px
+  flex:1;
 }
 
 .navbar a {
@@ -52,7 +52,7 @@
 }
 
 .login-btn a:hover {
-  background-color: #1eb94a;
+  background-color: #25eb56;
 }
 
 
@@ -94,7 +94,7 @@
     border-radius: 3px;
   }
 
-  .rightSide {
+  .navbar.rightSide {
     position: absolute;
     top: 100%;
     left: 0;

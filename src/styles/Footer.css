@@ -151,9 +151,12 @@
 
 @media (max-width: 768px) {
   .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+     display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;     
+    text-align: center;
+    gap: 10px;
   }
 }
 .footer {
@@ -164,5 +167,5 @@
   background-color: white;
   color: #25eb56;
   z-index: 1000;
-  height: 30%;
+  height: auto;
 }
