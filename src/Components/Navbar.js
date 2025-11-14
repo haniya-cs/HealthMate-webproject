@@ -18,13 +18,13 @@ const NavBar = () => {
       </div>
       
       <div className={`rightSide ${isOpen ? 'active' : ''}`}>
-      <Link to="/"> Home </Link>
-          <Link to="/about"> About </Link>
-          <Link to="/bmi"> BMI </Link>
-          <Link to="/nutrition"> Nutrition </Link>
-            <Link to="/dietplan"> Dietplan </Link>
-          <Link to="/contact"> Contact </Link>
-          <div className='login-btn'><Link to='/login'>Login</Link></div> 
+      <Link to="/" onClick={() => setIsOpen(false)}> Home </Link>
+          <Link to="/about"onClick={() => setIsOpen(false)}> About </Link>
+          <Link to="/bmi"onClick={() => setIsOpen(false)}> BMI </Link>
+          <Link to="/nutrition"onClick={() => setIsOpen(false)}> Nutrition </Link>
+            <Link to="/dietplan"onClick={() => setIsOpen(false)}> Dietplan </Link>
+          <Link to="/contact"onClick={() => setIsOpen(false)}> Contact </Link>
+          <div className='login-btn'onClick={() => setIsOpen(false)}><Link to='/login'>Login</Link></div> 
       </div>
       
 
