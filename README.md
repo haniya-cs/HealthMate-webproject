@@ -38,3 +38,8 @@ npm install
 npm start
 Open in Browser
 Visit http://localhost:3000
+## The links for GitHub Reperoistry and the Live link(host)
+https://github.com/haniya-cs/HealthMate-webproject.git
+
+Th Host:
+https://health-mate-webproject.vercel.app/
