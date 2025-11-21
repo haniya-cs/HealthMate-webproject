@@ -54,6 +54,9 @@ Home
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/e9883bccba9c98d92a8f6b6b0a375e0fb04d1498/Home.png)
 About
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/5f17200f525624c79070e4e64fc8425e00151009/screenshots/About.png)
+BMI
+![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/099a78f925ec6ec384608871f51d956dae11290a/screenshots/BMI.png)
+Nutrition
 
 ### Authors:
  Haniya Atwi 
