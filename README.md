@@ -57,6 +57,7 @@ About
 BMI
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/099a78f925ec6ec384608871f51d956dae11290a/screenshots/BMI.png)
 Nutrition
+![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/48a5be8a32dd3069e5779bcc534e6229ee0126fb/screenshots/Nutrition.png)
 
 ### Authors:
  Haniya Atwi 
