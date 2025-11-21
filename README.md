@@ -50,7 +50,11 @@ The Host:
 https://health-mate-webproject.vercel.app/
 
 ### Here is Some Screenshots (user interfaces) for our website:
+Home
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/e9883bccba9c98d92a8f6b6b0a375e0fb04d1498/Home.png)
+About
+![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/5f17200f525624c79070e4e64fc8425e00151009/screenshots/About.png)
+
 ### Authors:
  Haniya Atwi 
  Fatima Nadar
