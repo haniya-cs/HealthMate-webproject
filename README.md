@@ -60,6 +60,8 @@ Nutrition
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/48a5be8a32dd3069e5779bcc534e6229ee0126fb/screenshots/Nutrition.png)
 Diet plan
 ![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/d24414dfa0d683798b1279a2ec8e44bc78f143f2/screenshots/dietplan.png)
+Contact
+![image alt](https://github.com/haniya-cs/HealthMate-webproject/blob/31eb54f4e3100290d047b3f2873bdb9db56702ce/screenshots/contact.png)
 
 ### Authors:
  Haniya Atwi 
