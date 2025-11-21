@@ -1,6 +1,11 @@
 # HealthMate-webproject
-HealthMate is a user-friendly app designed to help individuals track and improve their overall health and wellness. With HealthMate, staying on top of your health goals becomes simple, personalized, and motivating.
+HealthMate is a user-friendly app designed to help individuals track and improve their overall health and wellness. With HealthMate, staying on top of your health goals becomes simple, personalized, and motivating.The platform focuses on a clean UI and mobile-friendly experience to make health management easier for everyone.
 
+### Project Descriptions:
+A responsive landing page
+Health tips and blog section
+Login and registration system
+User-friendly and mobile-optimized UI
 ###  General Pages
 - **Home:** Welcoming overview of HealthMate with navigation to all features.  
 - **About:** Information about the app’s purpose and benefits.  
@@ -41,5 +46,11 @@ Visit http://localhost:3000
 ## The links for GitHub Reperoistry and the Live link(host)
 https://github.com/haniya-cs/HealthMate-webproject.git
 
-Th Host:
+The Host:
 https://health-mate-webproject.vercel.app/
+
+### Here is Some Screenshots (user interfaces) for our website:
+
+### Authors:
+ Haniya Atwi 
+ Fatima Nadar
