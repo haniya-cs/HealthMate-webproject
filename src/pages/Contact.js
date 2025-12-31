@@ -11,11 +11,18 @@ const ContactPage = () => {
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-    // Simulate form submission
-    setTimeout(() => {
+    const data = await response.json();
+
+    if (response.ok) {
       setShowSuccess(true);
       setFormData({
         firstName: "",
@@ -24,13 +31,15 @@ const ContactPage = () => {
         subject: "",
         message: "",
       });
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    }, 500);
-  };
+      setTimeout(() => setShowSuccess(false), 5000);
+    } else {
+      alert(data.error || "Something went wrong!");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error. Try again later.");
+  }
+};
 
   const handleInputChange = (e) => {
     setFormData({

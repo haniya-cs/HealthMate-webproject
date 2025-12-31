@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "../styles/bmi.css";
 
 const BMI = () => {
@@ -8,14 +8,37 @@ const BMI = () => {
     age: "",
     gender: "",
   });
-
+  
   const [result, setResult] = useState(null);
-
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const saveBMIToDB = async (bmi, category) => {
+  try {
+    const response = await fetch("http://localhost:5000/api/bmi", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"), // Your login token
+      },
+      body: JSON.stringify({ bmi, category }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message);
+
+    console.log("Saved:", data);
+  } catch (error) {
+    console.error("Saving BMI failed:", error.message);
+  }
+  
+
+};
+
+
+  const handleSubmit =  (e) => {
     e.preventDefault();
     const height = parseFloat(formData.height) / 100;
     const weight = parseFloat(formData.weight);
@@ -42,7 +65,10 @@ const BMI = () => {
     }
 
     setResult({ bmi: bmiRounded, category, recommendation });
+    saveBMIToDB(bmiRounded, category);
   };
+  
+
 
   return (
     <div className="bmi-page">
@@ -140,6 +166,8 @@ const BMI = () => {
               </div>
             )}
           </div>
+          
+          
         </div>
 
         

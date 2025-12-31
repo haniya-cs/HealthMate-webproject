@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import'../styles/dietplan.css';
 const Dietplan = () => {
     
@@ -15,6 +15,8 @@ const Dietplan = () => {
         diseases:""
     });
     const [planData, setPlanData] = useState(null);
+    // Inside Dietplan.js, at the top
+const token = localStorage.getItem("token"); // your login token stored here
 
     const dietPlans = {
         'weight-loss': {
@@ -91,7 +93,7 @@ const Dietplan = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const { dietAge, dietGender, dietHeight, dietWeight, dietActivity, dietGoal } = formData;
 
@@ -139,6 +141,20 @@ const Dietplan = () => {
         const fats = Math.round((targetCalories * fatRatio) / 9);
 
         setPlanData({ calories: targetCalories, protein, carbs, fats, goal: dietGoal });
+         try {
+    const res = await fetch("http://localhost:5000/api/dietplan", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ goal: dietGoal, calories: targetCalories, protein, carbs, fats })
+    });
+    const data = await res.json();
+    console.log("Saved plan:", data);
+  } catch (err) {
+    console.error("Error saving plan:", err);
+  }
     };
 
     const generateWeeklyPlan = () => {
@@ -182,6 +198,22 @@ const Dietplan = () => {
             </div>
         );
     };
+//useEffect
+useEffect(() => {
+  const fetchPlans = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/dietplan", {
+        headers: { "Authorization": localStorage.getItem("token") }
+      });
+      const data = await res.json();
+      console.log("User diet plans:", data);
+    } catch (err) {
+      console.error("Error fetching plans:", err);
+    }
+  };
+
+  if (token) fetchPlans();
+}, [token]);
 
     return (
         <main className="max-w-6xl mx-auto px-4 py-6">

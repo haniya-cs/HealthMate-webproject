@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "../styles/nutrition.css";
-
+import axios from "axios";
 const Nutrition = () => {
   const [dailyGoal, setDailyGoal] = useState(2000);
   const [totalCalories, setTotalCalories] = useState(0);
@@ -23,7 +23,43 @@ const Nutrition = () => {
     portion: "",
   });
 
-  //  local database for just testing
+  //new useEffect
+  useEffect(() => {
+  // Check if the setup form was already completed
+  const completed = localStorage.getItem("setupCompleted");
+  const savedSetup = JSON.parse(localStorage.getItem("setupData"));
+
+  if (completed === "true" && savedSetup) {
+    setSetupData(savedSetup); // fill the form with saved data
+    setShowSetup(false);       // hide the setup form
+
+    // Recalculate dailyGoal
+    const { userAge, userGender, userHeight, userWeight, activityLevel, goal } = savedSetup;
+    let bmr;
+    if (userGender === "male") {
+      bmr = 10 * parseFloat(userWeight) + 6.25 * parseFloat(userHeight) - 5 * parseInt(userAge) + 5;
+    } else {
+      bmr = 10 * parseFloat(userWeight) + 6.25 * parseFloat(userHeight) - 5 * parseInt(userAge) - 161;
+    }
+
+    let tdee = bmr * parseFloat(activityLevel);
+    let newDailyGoal;
+    if (goal === "lose") newDailyGoal = Math.round(tdee - 500);
+    else if (goal === "gain") newDailyGoal = Math.round(tdee + 500);
+    else newDailyGoal = Math.round(tdee);
+
+    setDailyGoal(newDailyGoal);
+  }
+}, []); // runs once on page load
+
+const [editingFood, setEditingFood] = useState(null);
+
+const startEditFood = (food) => {
+  setEditingFood(food);
+  setFoodForm({ foodName: food.food_name, portion: food.portion });
+};
+
+
   const foodDatabase = {
     apple: 95,
     banana: 105,
@@ -183,40 +219,78 @@ const Nutrition = () => {
 
     setDailyGoal(newDailyGoal);
     setShowSetup(false);
+
+    localStorage.setItem("setupData", JSON.stringify(setupData));
+    localStorage.setItem("setupCompleted", "true");
   };
 
-  const addFood = (e) => {
-    e.preventDefault();
-    const foodName = foodForm.foodName.trim().toLowerCase();
-    let calories = foodDatabase[foodName];
+  const addFood = async (e) => {
+  e.preventDefault();
+  const foodName = foodForm.foodName.trim().toLowerCase();
+  let calories = foodDatabase[foodName];
 
-    if (!calories) {
-      const userInput = prompt(
-        "We couldn't find this food. Please enter the calories manually:"
-      );
-      calories = parseInt(userInput);
-      if (isNaN(calories)) {
-        alert("Invalid calorie value.");
-        return;
-      }
+  if (!calories) {
+    const userInput = prompt(
+      "We couldn't find this food. Please enter the calories manually:"
+    );
+    calories = parseInt(userInput);
+    if (isNaN(calories)) {
+      alert("Invalid calorie value.");
+      return;
     }
+  }
 
-    const newEntry = {
-      id: Date.now(),
-      name: foodForm.foodName,
-      calories,
-      portion: foodForm.portion || "1 serving",
-    };
+  try {
+     if (editingFood) {
+      // Update existing food
+     const res = await axios.put(
+    `http://localhost:5000/api/nutrition/${editingFood.id}`,
+    { food_name: foodForm.foodName, calories, portion: foodForm.portion || "1 serving" },
+    { headers: { Authorization: localStorage.getItem("token") } }
+  );
 
-    setFoodEntries([...foodEntries, newEntry]);
+  const updatedEntries = foodEntries.map(f => f.id === editingFood.id ? res.data : f);
+  setFoodEntries(updatedEntries);
+
+  // Recalculate total calories based on updated entries
+  const total = updatedEntries.reduce((sum, f) => sum + f.calories, 0);
+  setTotalCalories(total);
+
+  setEditingFood(null);
+   setFoodForm({ foodName: "", portion: "" });
+    } else {
+    const res = await axios.post(
+      "http://localhost:5000/api/nutrition",
+      { food_name: foodForm.foodName, calories, portion: foodForm.portion || "1 serving" },
+      { headers: { Authorization: localStorage.getItem("token") } }
+    );
+    setFoodEntries([...foodEntries, res.data]);
     setTotalCalories(totalCalories + calories);
+    
     setFoodForm({ foodName: "", portion: "" });
-  };
+  }
+  } catch (err) {
+    console.error(err);
+    alert("Error adding food entry");
+  }
+};
 
-  const removeFood = (id, calories) => {
+
+ const removeFood = async (id, calories) => {
+  try {
+    await axios.delete(`http://localhost:5000/api/nutrition/${id}`, {
+      headers: { Authorization: localStorage.getItem("token") }
+    });
     setFoodEntries(foodEntries.filter((entry) => entry.id !== id));
     setTotalCalories(totalCalories - calories);
-  };
+  } catch (err) {
+    console.error(err);
+    alert("Error deleting food entry");
+  }
+};
+
+
+
 
   const showRecipes = () => {
     setRecipes(recipeData[selectedCondition] || recipeData.general);
@@ -224,6 +298,24 @@ const Nutrition = () => {
 
   const remaining = dailyGoal - totalCalories;
   const percentage = Math.min((totalCalories / dailyGoal) * 100, 100);
+  //useEffect
+  useEffect(() => {
+  const fetchFoodEntries = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/nutrition", {
+        headers: { Authorization: localStorage.getItem("token") }
+      });
+      setFoodEntries(res.data);
+      const total = res.data.reduce((sum, item) => sum + item.calories, 0);
+      setTotalCalories(total);
+    } catch (err) {
+      console.error(err);
+      alert("Error fetching food entries");
+    }
+  };
+  fetchFoodEntries();
+}, []);
+
 
   return (
     <main className="nutrition-page">
@@ -403,7 +495,7 @@ const Nutrition = () => {
                       foodEntries.map((food) => (
                         <div key={food.id} className="food-entry">
                           <div>
-                            <strong>{food.name}</strong>
+                            <strong>{food.food_name}</strong>
                             <br />
                             <small>{food.portion}</small>
                           </div>
@@ -411,11 +503,18 @@ const Nutrition = () => {
                             <span>{food.calories} cal</span>
                             <button
                               type="button"
+                              onClick={() => startEditFood(food)}
+                              className="edit-btn"
+                            >
+                                 ✎
+                             </button>
+                            <button
+                              type="button"
                               onClick={() =>
-                                removeFood(food.id, food.calories)
+                                removeFood(food.id,food.calories)
                               }
                               className="remove-btn"
-                            >
+                             >
                               ✖
                             </button>
                           </div>

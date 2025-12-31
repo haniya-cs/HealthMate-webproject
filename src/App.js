@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Footer from "./Components/Footer";
 import Home from './pages/Home.js';
 import Login from './Components/Login.js';
+import Signup from "./Components/Signup.js";
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
     <Route path ="/about" element={<About/>}/>
     <Route path ="/contact" element={<Contact/>}/>
     <Route path ="/login" element={<Login/>}/>
+    <Route path ="/Signup" element={<Signup/>}/>
    </Routes>
 
    <Footer/>
