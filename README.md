@@ -1,5 +1,5 @@
 # HealthMate-webproject
-HealthMate is a user-friendly app designed to help individuals track and improve their overall health and wellness. With HealthMate, staying on top of your health goals becomes simple, personalized, and motivating.The platform focuses on a clean UI and mobile-friendly experience to make health management easier for everyone.
+HealthMate is a user-friendly app designed to help individuals track and improve their overall health and wellness. With HealthMate, staying on top of your health goals becomes simple, personalized, and motivating.The platform focuses on a clean UI and mobile-friendly experience to make health management easier for everyone.With a relational Database for each page that suppor the CRUD operations that allow user to ADD and DELETE and UPDATE and even GET the data for each  registerd user  
 
 ### Project Descriptions:
 A responsive landing page
