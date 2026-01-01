@@ -3,7 +3,7 @@ import mysql from "mysql2";
 import cors from "cors";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-
+import PORT from "dotenv";
 
 const app = express();
 app.use(cors());
