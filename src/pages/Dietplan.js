@@ -207,6 +207,19 @@ useEffect(() => {
       });
       const data = await res.json();
       console.log("User diet plans:", data);
+       if (data && data.length > 0) {
+        // Assume the API returns the latest plan as the first element
+        const latestPlan = data[0]; 
+
+        // Set planData so UI shows it
+        setPlanData({
+          calories: latestPlan.calories,
+          protein: latestPlan.protein,
+          carbs: latestPlan.carbs,
+          fats: latestPlan.fats,
+          goal: latestPlan.goal
+        });
+    }
     } catch (err) {
       console.error("Error fetching plans:", err);
     }

@@ -9,6 +9,8 @@ const NavBar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+  
+  
   return (
     <nav className="navbar">
        <div className="logo-container">
@@ -24,7 +26,7 @@ const NavBar = () => {
           <Link to="/nutrition"onClick={() => setIsOpen(false)}> Nutrition </Link>
             <Link to="/dietplan"onClick={() => setIsOpen(false)}> Dietplan </Link>
           <Link to="/contact"onClick={() => setIsOpen(false)}> Contact </Link>
-          <div className='login-btn'onClick={() => setIsOpen(false)}><Link to='/login'>Login</Link></div> 
+         <div className='login-btn'onClick={() => setIsOpen(false)}><Link to='/login'>Login</Link></div> 
       </div>
       
 

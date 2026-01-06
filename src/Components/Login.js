@@ -36,6 +36,9 @@ const Login = () => {
     }
 
     localStorage.setItem("token", data.token);
+    const payload = JSON.parse(atob(data.token.split('.')[1]));
+    const user = { id: payload.id, fullName: data.fullName, email: data.email };
+    localStorage.setItem("user", JSON.stringify(user));
     navigate("/");
 
   } catch (error) {

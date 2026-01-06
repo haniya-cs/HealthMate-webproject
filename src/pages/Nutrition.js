@@ -2,10 +2,18 @@ import React, { useState,useEffect } from "react";
 import "../styles/nutrition.css";
 import axios from "axios";
 const Nutrition = () => {
-  const [dailyGoal, setDailyGoal] = useState(2000);
+const storedUser = localStorage.getItem("user");
+  const user = storedUser && storedUser !== "undefined" ? JSON.parse(storedUser) : null;
+  const userId = user?.id;
+
+  const setupKey = `setupData_${userId}`;
+  const setupCompletedKey = `setupCompleted_${userId}`;
+
+  const [dailyGoal, setDailyGoal] = useState();
   const [totalCalories, setTotalCalories] = useState(0);
   const [foodEntries, setFoodEntries] = useState([]);
   const [showSetup, setShowSetup] = useState(true);
+ 
   const [selectedCondition, setSelectedCondition] = useState("general");
   const [recipes, setRecipes] = useState([]);
 
@@ -22,35 +30,57 @@ const Nutrition = () => {
     foodName: "",
     portion: "",
   });
+  console.log("storedUser:", storedUser);
+console.log("parsed user:", user);
+console.log("userId:", userId);
 
-  //new useEffect
-  useEffect(() => {
-  // Check if the setup form was already completed
-  const completed = localStorage.getItem("setupCompleted");
-  const savedSetup = JSON.parse(localStorage.getItem("setupData"));
+//helper
+useEffect(() => {
+  if (!userId) return;
 
-  if (completed === "true" && savedSetup) {
-    setSetupData(savedSetup); // fill the form with saved data
-    setShowSetup(false);       // hide the setup form
+  try {
+    // Only migrate old keys if old keys exist for "undefined" user
+    const oldSetupCompleted = localStorage.getItem("setupCompleted_undefined");
+    const oldSetupData = localStorage.getItem("setupData_undefined");
 
-    // Recalculate dailyGoal
-    const { userAge, userGender, userHeight, userWeight, activityLevel, goal } = savedSetup;
-    let bmr;
-    if (userGender === "male") {
-      bmr = 10 * parseFloat(userWeight) + 6.25 * parseFloat(userHeight) - 5 * parseInt(userAge) + 5;
-    } else {
-      bmr = 10 * parseFloat(userWeight) + 6.25 * parseFloat(userHeight) - 5 * parseInt(userAge) - 161;
+    if (oldSetupCompleted && oldSetupData) {
+      // Migrate old "undefined" keys to this userId
+      localStorage.setItem(`setupCompleted_${userId}`, oldSetupCompleted);
+      localStorage.setItem(`setupData_${userId}`, oldSetupData);
+
+      // Remove old keys to avoid polluting future new users
+      localStorage.removeItem("setupCompleted_undefined");
+      localStorage.removeItem("setupData_undefined");
     }
 
-    let tdee = bmr * parseFloat(activityLevel);
-    let newDailyGoal;
-    if (goal === "lose") newDailyGoal = Math.round(tdee - 500);
-    else if (goal === "gain") newDailyGoal = Math.round(tdee + 500);
-    else newDailyGoal = Math.round(tdee);
+    const completed = localStorage.getItem(`setupCompleted_${userId}`);
+    const savedSetupRaw = localStorage.getItem(`setupData_${userId}`);
+    const savedSetup = savedSetupRaw && savedSetupRaw !== "undefined" ? JSON.parse(savedSetupRaw) : null;
 
-    setDailyGoal(newDailyGoal);
+    if (completed === "true" && savedSetup) {
+      setSetupData(savedSetup);
+      setDailyGoal(savedSetup.dailyGoal ?? 2000);
+      setShowSetup(false); // skip setup
+    } else {
+      setSetupData(savedSetup || {
+        userAge: "",
+        userGender: "male",
+        userHeight: "",
+        userWeight: "",
+        activityLevel: "1.2",
+        goal: "maintain",
+      });
+      setDailyGoal(savedSetup?.dailyGoal ?? null);
+      setShowSetup(true); // show setup for new users
+    }
+  } catch (e) {
+    console.error(e);
+    setShowSetup(true);
+    setDailyGoal(null);
   }
-}, []); // runs once on page load
+}, [userId]);
+
+
 
 const [editingFood, setEditingFood] = useState(null);
 
@@ -218,10 +248,13 @@ const startEditFood = (food) => {
     else newDailyGoal = Math.round(tdee);
 
     setDailyGoal(newDailyGoal);
-    setShowSetup(false);
+   localStorage.setItem(
+    `setupData_${userId}`,
+    JSON.stringify({ ...setupData, dailyGoal: newDailyGoal })
+  );
+  localStorage.setItem(`setupCompleted_${userId}`, "true");
 
-    localStorage.setItem("setupData", JSON.stringify(setupData));
-    localStorage.setItem("setupCompleted", "true");
+  setShowSetup(false); 
   };
 
   const addFood = async (e) => {
